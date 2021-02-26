@@ -774,6 +774,108 @@ For part 2, have to sort the letters of the word. Not too bad.
 # 2017/24
 # 2017/25
 
+-----
+
+# 2016/01
+# 2016/02
+# 2016/03
+# 2016/04
+# 2016/05
+# 2016/06
+# 2016/07
+# 2016/08
+# 2016/09
+# 2016/10
+# 2016/11
+# 2016/12
+# 2016/13
+# 2016/14
+# 2016/15
+# 2016/16
+# 2016/17
+# 2016/18
+# 2016/19
+# 2016/20
+# 2016/21
+# 2016/22
+# 2016/23
+# 2016/24
+# 2016/25
 
 -----
 
+# 2015/01: Not Quite Lisp
+Given a string consisting of characters `(` and `)`, such as `))(((((`. Treat `(` as incrementing by 1 and `)` as decrementing by 1. Start at position `0`.
+
+* Part 1: Find the position you end up at after all changes.
+* Part 2: Find how many steps it takes before you land on position `-1`.
+
+Trivial.
+
+# 2015/02: I Was Told There Would Be No Math
+
+Given list of box dimensions like: 
+```
+20x3x11
+15x27x5
+6x29x7
+30x15x9
+19x29x21
+10x4x15
+1x26x4
+1x5x18
+10x15x23
+10x14x20
+3x5x18
+```
+
+* Part 1: Calculate amount of wrapping paper needed, using formula involving surface area and minimum side area.
+* Part 2: Calculate amount of ribbon needed, using formula involving volume and minimum side perimeter.
+
+Trivial.
+
+# 2015/03: Perfectly Spherical Houses in a Vacuum
+
+On a 2d rectangular grid. 
+Given input like `>v^>^^^<>><v^<^^^<>v<<v<^v>>>^>>v^><<>vvv><^>>v><v><>v>>^>v><<><<>^<>^^^vv><v^>v^^>>^>^<^v<v<^^<^vvvv>v<v>^>v^>^><^<vvvv><^><><<v<>v<v^><^<v^>^v^^<<<<^><^^<^><>>^v<<^<<^vv>v>>v<^<^vv>><v<vv>v<v<v>^v<>^>v<>^v<<<v>>^^v>>><vvv>v^>^v^v>^^^v<vvvv>><^>vvv^<vv^^vv><<<>v<>v>^<vvv^<^<v<v<^vv^^>>vv^<^^v^><^^^^^v<^<v<^>>>vv^v^>^<v>^<><v^<^v>>><^v^<<v<<v<>v>^v<v^v>>^^v<<v<v<<>>>vv>>^v>>^<<<<^><<<><^^>>v<>^vvvv>v^^^>^^^>^<vvvv><^^v<v<>v<^v^v<<v^^^v^<v<^v>v^^<>^>^<^v>vv<v^vv<^<<>v><<^><><^^v<<><^^><>^v>^<><<^<^^<<>vv<>^^<<^>><<<>>vvv>^>v^^v^><<^>v>^>^<^<<>v<^>vv^v^v<>vv<<v>vv<vv><^>v^<>^vv^v^<v<^>>>>v^v><^<><<>vv^<vvv^>>vvv^>v>>><^^vv<vvvv>v`
+
+which corresponds to instructions for traversing the grid.
+
+* Part 1: Count how many positions get visited.
+* Part 2: The instructions are alternated between two players. Count how many positions get visited.
+
+Used sets of coordinates.
+
+# 2015/04: The Ideal Stocking Stuffer
+
+Given a "secret key" that is a short string.
+
+* Part 1: Starting at 1, find the smallest number that needs to be appended to the secret key so that the resulting string, when MD5 hashed, will start with 5 zeros
+* Part 2: Same, but for 6 zeros.
+
+Trivial.
+
+# 2015/05: Doesn't He Have Intern-Elves For This? (STUCK)
+
+Part 2 should work, but not getting right number apparently
+
+# 2015/06
+# 2015/07
+# 2015/08
+# 2015/09
+# 2015/10
+# 2015/11
+# 2015/12
+# 2015/13
+# 2015/14
+# 2015/15
+# 2015/16
+# 2015/17
+# 2015/18
+# 2015/19
+# 2015/20
+# 2015/21
+# 2015/22
+# 2015/23
+# 2015/24
+# 2015/25
