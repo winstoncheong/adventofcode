@@ -1,0 +1,53 @@
+Example 1:
+
+(0), 1, 4, 5, 6, 7, 10, 11, 12, 15, 16, 19, (22)
+   1   3  1  1  1  3   1   1   3   1   3   3
+   1   3  *     *  3   *   1   3   1   3   3
+
+
+(0), (1, 4), 5, 6, (7, 10), 11, (12, 15), (16, 19, 22)
+    1   3   1  1  1   3    1   1    3    1    3   3
+	
+	
+3 1's-> *4
+2 1's-> *2
+
+Consecutive 1's can be reduced..
+
+"313" cannot be
+
+any 1's BEFORE A 3 MUST be used
+
+5,6,11 are completely optional. So 2^3 = 8 is #arrangements
+
+
+----
+Example 2
+
+0, 1, 2, 3, 4, 7, 8, 9, 10, 11, 14, 17, 18, 19, 20, 23, 24, 25, 28, 31, 32, 33, 34, 35, 38, 39, 42, 45, 46, 47, 48, 49, 52
+  1, 1, 1, 1, 3, 1, 1, 1,  1,  3,  3,  1,  1,  1,  3,  1,  1,  3,  3,  1,  1,  1,  1,  3,  1,  3,  3,  1,  1,  1,  1,  3
+
+(0), 1, 2, 3, (4, 7), 8, 9, 10, (11, 14, 17), 18, 19, (20, 23), 24, (25, 28, 31), 32, 33, 34, (35, 38), (39, 42, 45), 46, 47, 48, (49, 52)
+
+(0), 1, 2, 3, (4, 7), 8, 9, 10, (11, 14, 17), 18, 19, (20, 23), 24, (25, 28, 31), 32, 33, 34, (35, 38, 39, 42, 45), 46, 47, 48, (49, 52)
+    1, 1, 1, 1,  3,  1, 1, 1,  1,   3,  3,   1,  1,  1,   3,   1,  1,   3,  3,   1,  1,  1,  1,   3,  1,  3,  3,   1,  1,  1,  1,   3
+
+24 can be included or excluded, so *2
+18, 19 all 4 ways possible (17-20 gap works) so *4
+1,2,3 Need one of since (0-4) not poss. *(8-1) = *7
+8,9,10 Need one of since (7-11) not poss. *7
+32,33,34 Need one of . *7
+46,47,48 Need one of. *7
+
+Should get 19208 #arrangements. Yep.
+
+
+Can this be determined from the list of differences? 
+Three optional values in a row (4 consecutive ones) gives *7. 
+Two optional values in a row (3 consecutive ones) gives *4.
+One optional value (2 consecutive ones) gives *2.
+
+
+Looks like can count how many 1s are in a row, subtract by 1, and use the rules above to compute.
+
+
