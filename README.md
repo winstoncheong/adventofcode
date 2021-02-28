@@ -871,7 +871,30 @@ Given a list of strings of random alphabetic characters.
 
 Part 1 was easy. For part 2, I used regex.
 
-# 2015/06
+# 2015/06: Probably a Fire Hazard
+
+Given a list of instructions like:
+```
+turn off 70,873 through 798,923
+toggle 258,985 through 663,998
+turn on 601,259 through 831,486
+turn off 914,94 through 941,102
+turn off 558,161 through 994,647
+turn on 119,662 through 760,838
+toggle 378,775 through 526,852
+turn off 384,670 through 674,972
+turn off 249,41 through 270,936
+turn on 614,742 through 769,780
+```
+where the "through" means it applies to the rectangular range determined by those two coordiantes.
+
+* Part 1: Lights are binary. Count how many lights are lit. 
+* Part 2: Lights are integer valued "brightness". Toggle increases by 2, turn on increaes by 1, turn off decreases by 1 (but does not go below zero). Calculate total brightness of all lights.
+
+Used regex to extract useful values from instructions. Used defaultdicts for grids.
+
+Created a function `rect_of_points` to create the list of coordinate points from the two endpoints given. Part 1 uses a counter. Part 2 uses `sum()`.
+
 # 2015/07
 # 2015/08
 # 2015/09
