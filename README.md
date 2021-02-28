@@ -857,7 +857,19 @@ Trivial.
 
 # 2015/05: Doesn't He Have Intern-Elves For This? (STUCK)
 
-Part 2 should work, but not getting right number apparently
+Given a list of strings of random alphabetic characters.
+
+* Part 1: Strings are "nice" if they satisfy the three properties:
+  * it contains >3 vowels
+  * it has a letter appearing twice in a row
+  * it does not have a given set of substrings
+
+  The goal is to count the number of nice strings in the dataset.
+* Part 2: The goal is the same, but "nice" strings are now those that satisfy both the properties:
+  * contains a pair of two letters appearing twice without overlap
+  * contains at least one letter that repeats with exactly one letter between them
+
+Part 1 was easy. For part 2, I used regex.
 
 # 2015/06
 # 2015/07
