@@ -972,7 +972,17 @@ min(trip_dist(perm) for perm in permutations(cities))
 max(trip_dist(perm) for perm in permutations(cities))
 ```
 
-# 2015/10
+# 2015/10: Elves Look, Elves Say
+Given an input string consisting of characters `1`, `2`, `3`.
+Iterate the look-and-say sequence on this string.
+
+* Part 1: Compute the 40th iteration on the given input.
+* Part 2: Compute the 50th iteration on the given input.
+
+Straightforward. Implemented `look_and_say` by iterating over string carefully.
+Calculating the 40 iterations takes about 2 seconds. 
+Calculating an additional 10 iterations takes about 40 seconds.
+
 # 2015/11
 # 2015/12
 # 2015/13
