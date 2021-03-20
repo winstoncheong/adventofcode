@@ -1046,7 +1046,23 @@ Differences were:
 * The relationship is asymmetrical, so totalling requires adding both directions.
 * The permutation is treated as a loop instead of a path, so have to add the contribution of pairing the 0th person with the last person.
 
-# 2015/14
+# 2015/14: Reindeer Olympics
+Given reindeer race information like this:
+```
+Rudolph can fly 3 km/s for 15 seconds, but then must rest for 28 seconds.
+Donner can fly 19 km/s for 9 seconds, but then must rest for 164 seconds.
+Blitzen can fly 19 km/s for 9 seconds, but then must rest for 158 seconds.
+```
+Simulate for 2503 seconds.
+
+* Part 1: Determine the furthest distance travelled.
+* Part 2: Each second, award a point to the the reindeer that are furthest ahead. If there is a tie, they all get a point. How many points does the winner have at the end of the simulation?
+
+Extracted useful data with regex.
+The first part was trivial. Created a `simulate` function that would just calculate in one go how far a given reindeer would travel for a given `simulation_length`.
+
+The second part needed a completely different approach. Created a `Reindeer` class, with a `step` method. Created a `simultaneous_step` function to process what happens each second, returning a list of winners of that second. Then just iterate over the simulation length, totalling the points of the winners. 
+
 # 2015/15
 # 2015/16
 # 2015/17
