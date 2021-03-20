@@ -1081,7 +1081,33 @@ If any of the cookie's attributes is negative, the score of the cookie is 0.
 
 Did this the naive way. The easiest way to iterate over all possibilites of having 4 amounts that add to 100 is by using a triply nested for loop. The calculation of a cookie's attributes are a dot product of an amount vector and an attribute vector. 
 
-# 2015/16
+# 2015/16: Aunt Sue
+Have 500 Aunt Sues. Given data about them in the format: 
+```
+Sue 30: trees: 0, samoyeds: 5, akitas: 9
+Sue 31: vizslas: 1, perfumes: 0, trees: 6
+Sue 32: cars: 7, vizslas: 1, children: 10
+Sue 33: vizslas: 1, cars: 1, perfumes: 7
+Sue 34: vizslas: 9, trees: 10, akitas: 9
+```
+Missing information is just unknown.
+
+A device's reading tells you this information:
+```
+children: 3
+cats: 7
+samoyeds: 2
+pomeranians: 3
+akitas: 0
+vizslas: 0
+goldfish: 5
+trees: 3
+cars: 2
+perfumes: 1
+```
+* Part 1: Determine the number of the Sue that matches this data.
+* Part 2: Some of the device's readings are interpreted differently. The cats and trees of the matching Sue should be greater than what the reading gives. The goldfish and pomeranians of the matching Sue should be lower than what the reading gives.
+
 # 2015/17
 # 2015/18
 # 2015/19
