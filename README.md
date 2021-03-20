@@ -941,7 +941,37 @@ For example
 
 Both parts straightforward. For part 1, I carefully iterated to handle the escaped character sequences. For part 2, I counted *just* the number of added characters. 
 
-# 2015/09
+# 2015/09: All in a Single Night
+Given data about distances between cities:
+```
+London to Dublin = 464
+London to Belfast = 518
+Dublin to Belfast = 141
+```
+A route consists of travelling to every location exactly once. 
+Possible routes for this sample data are:
+```
+Dublin -> London -> Belfast = 982
+London -> Dublin -> Belfast = 605
+London -> Belfast -> Dublin = 659
+Dublin -> Belfast -> London = 659
+Belfast -> Dublin -> London = 605
+Belfast -> London -> Dublin = 982
+```
+
+* Part 1: Determine the distance of the shortest route.
+* Part 2: Determine the distance of the longest route.
+
+Quite easy. 
+Created a dictionary of distances, with keys being pairs of cities. Doubled the keys by putting cities in both orders, to make lookup easier. 
+Used `itertools.permutations` to make all possible trips.
+Created a `trip_dist` function to process the tuple `permututations` returns.
+Then the answers are just gotten by one-liners:
+```python
+min(trip_dist(perm) for perm in permutations(cities))
+max(trip_dist(perm) for perm in permutations(cities))
+```
+
 # 2015/10
 # 2015/11
 # 2015/12
