@@ -895,7 +895,26 @@ Used regex to extract useful values from instructions. Used defaultdicts for gri
 
 Created a function `rect_of_points` to create the list of coordinate points from the two endpoints given. Part 1 uses a counter. Part 2 uses `sum()`.
 
-# 2015/07
+# 2015/07: Some Assembly Required
+A circuit is expressed by input of the form:
+```
+123 -> x
+456 -> y
+x AND y -> d
+x OR y -> e
+x LSHIFT 2 -> f
+y RSHIFT 2 -> g
+NOT x -> h
+NOT y -> i
+```
+* Part 1: Determine the value of wire `a`
+* Part 2: Reset the circuit with wire `b` taking the answer from part 1. Determine the new value for wire `a`.
+
+Used strings of 16 characters (`0` and `1`) to handle the required operations. Created utility methods (`bin_and`, `bin_or`, `bin_lshift`, `bin_rshift`, `bin_not`, `convert_to_binstr`) to manipulate these strings accordingly.
+Looped over unused rules (assignments) until everything was determined.
+
+For part 2, I put the loading code in a `load()` function and the executing code in an `execute()` function. That made the resetting and reloading for part 2 possible programmatically. 
+
 # 2015/08
 # 2015/09
 # 2015/10
