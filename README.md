@@ -1108,7 +1108,14 @@ perfumes: 1
 * Part 1: Determine the number of the Sue that matches this data.
 * Part 2: Some of the device's readings are interpreted differently. The cats and trees of the matching Sue should be greater than what the reading gives. The goldfish and pomeranians of the matching Sue should be lower than what the reading gives.
 
-# 2015/17
+# 2015/17: No Such Thing as Too Much
+Given list of different container sizes.
+
+* Part 1: How many different combinations of containers can fit exactly 150?
+* Part 2: Find the minimum number of containers that can fit exactly 150. Of those combinations that use the minimum number of containers, how many will leave a set of containers that can still fit exactly 150?
+
+Used `powerset` from `more_itertools`. Part 1 is very straightforward. Part 2, I did the obvious way. 
+
 # 2015/18
 # 2015/19
 # 2015/20
