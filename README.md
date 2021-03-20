@@ -915,7 +915,32 @@ Looped over unused rules (assignments) until everything was determined.
 
 For part 2, I put the loading code in a `load()` function and the executing code in an `execute()` function. That made the resetting and reloading for part 2 possible programmatically. 
 
-# 2015/08
+# 2015/08: Matchsticks
+Given data like:
+```
+"\\c\"jyufbry\"ryo\"xpo\x26ecninfeckh\\s"
+"hdnpngtuc\"dzbvvosn\x31fwtpzbrt"
+"hesbpd\xd4"
+"dsdbstuzrdfmrnyntufs\"dmv"
+"d\xeeibcwhcvkt"
+"fvzwrsfjdqdmy\"\"v"
+"ns\"dqafz\\lkyoflnazv\"mn\x37\"o\"yj\"e"
+```
+
+There are two lengths: the code representation and the in-memory length.
+For example
+
+|Input|Code representation|In-memory|
+|---|:----:|:-----:|
+|""|2|0|
+|"\x27"|6|1|
+|"a\\a"|6|3|
+
+* Part 1: Count total difference between code representation length and the in-memory length.
+* Part 2: Count total difference between reencoded length and the original length.
+
+Both parts straightforward. For part 1, I carefully iterated to handle the escaped character sequences. For part 2, I counted *just* the number of added characters. 
+
 # 2015/09
 # 2015/10
 # 2015/11
