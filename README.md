@@ -1009,7 +1009,43 @@ To sum everything, I created a `sum_all` method that recursively handles the str
 
 To adjust for part 2, I introduced a field `part` to the `sum_all` function signature, using it to affect the recursion.
 
-# 2015/13
+# 2015/13: Knights of the Dinner Table
+Given seating information like:
+```
+Alice would gain 54 happiness units by sitting next to Bob.
+Alice would lose 79 happiness units by sitting next to Carol.
+Alice would lose 2 happiness units by sitting next to David.
+Bob would gain 83 happiness units by sitting next to Alice.
+Bob would lose 7 happiness units by sitting next to Carol.
+Bob would lose 63 happiness units by sitting next to David.
+Carol would lose 62 happiness units by sitting next to Alice.
+Carol would gain 60 happiness units by sitting next to Bob.
+Carol would gain 55 happiness units by sitting next to David.
+David would gain 46 happiness units by sitting next to Alice.
+David would lose 7 happiness units by sitting next to Bob.
+David would gain 41 happiness units by sitting next to Carol.
+```
+
+A seating arrangement looks like this:
+```
+     +41 +46
++55   David    -2
+Carol       Alice
++60    Bob    +54
+     -7  +83
+```
+
+* Part 1: Find maximum happiness attainable from all possible seating arrangements.
+* Part 2: Include yourself this time (you contribute 0 happiness).
+
+The structure of this problem is a lot like 2015/09. 
+Again, I used `itertools.permutations`, a set of names, and a dict of happiness units. 
+
+Differences were:
+* Used regex to extract the relevant data from the input file.
+* The relationship is asymmetrical, so totalling requires adding both directions.
+* The permutation is treated as a loop instead of a path, so have to add the contribution of pairing the 0th person with the last person.
+
 # 2015/14
 # 2015/15
 # 2015/16
