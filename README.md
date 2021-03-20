@@ -1116,7 +1116,16 @@ Given list of different container sizes.
 
 Used `powerset` from `more_itertools`. Part 1 is very straightforward. Part 2, I did the obvious way. 
 
-# 2015/18
+# 2015/18: Like a GIF For Your Yard
+Given a 100x100 grid of lights (on '#' or off '.'). 
+Iterating rules:
+* Light stays on if 2 or 3 of its neighboring lights are on. Otherwise stays off. 
+* Light that's off turns on if exactly 3 of its neighbors are on. 
+* Part 1: How many lights are on after 100 iterations?
+* Part 2: The corner lights are broken and always stay on. How many lights are on after 100 iterations?
+
+Straightforward. Created utility functions `step(grid)`, `count_neighbors_on(grid, i, j)` and `neighbor_coords(i, j)`.
+
 # 2015/19
 # 2015/20
 # 2015/21
