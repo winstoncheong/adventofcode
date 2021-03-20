@@ -1063,7 +1063,24 @@ The first part was trivial. Created a `simulate` function that would just calcul
 
 The second part needed a completely different approach. Created a `Reindeer` class, with a `step` method. Created a `simultaneous_step` function to process what happens each second, returning a list of winners of that second. Then just iterate over the simulation length, totalling the points of the winners. 
 
-# 2015/15
+# 2015/15: Science for Hungry People
+Given information about ingredients like so:
+```
+Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8
+Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3
+```
+
+There are 4 ingredients total (at least in my dataset).
+Must use 100 units of ingredients total in making the cookie. 
+A score for the cookie is calculated by multiplying the scores of its four attributes: capacity, durability, flavor, texture. 
+Each of these attributes is calculated as a weighted average. 
+If any of the cookie's attributes is negative, the score of the cookie is 0. 
+
+* Part 1: Find the max score possible.
+* Part 2: Only consider cookies that are 500 calories. Find the max score possible.
+
+Did this the naive way. The easiest way to iterate over all possibilites of having 4 amounts that add to 100 is by using a triply nested for loop. The calculation of a cookie's attributes are a dot product of an amount vector and an attribute vector. 
+
 # 2015/16
 # 2015/17
 # 2015/18
