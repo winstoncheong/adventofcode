@@ -983,7 +983,20 @@ Straightforward. Implemented `look_and_say` by iterating over string carefully.
 Calculating the 40 iterations takes about 2 seconds. 
 Calculating an additional 10 iterations takes about 40 seconds.
 
-# 2015/11
+# 2015/11: Corporate Policy
+Given a starting password.
+A valid password satisfies three conditions:
+1) Increasing straight of 3 letters
+2) Does not contain the characters `i`, `o`, `l`
+3) Contains two non-overlapping pairs of letters
+
+* Part 1: Find the next valid password from the starting password.
+* Part 2: Find the next valid password after that.
+
+Easy. Created boolean functions corresponding to each condition, one for returning whether the password is valid, and one for incrementing.
+
+To do incrementing, I covert the string to a list of integer `ord` values using a one-liner `ords = list(map(ord, list(pw)))` and then increment with carry-over. Then covert back with `''.join(map(chr, ords))`
+
 # 2015/12
 # 2015/13
 # 2015/14
