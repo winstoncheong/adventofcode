@@ -997,7 +997,18 @@ Easy. Created boolean functions corresponding to each condition, one for returni
 
 To do incrementing, I covert the string to a list of integer `ord` values using a one-liner `ords = list(map(ord, list(pw)))` and then increment with carry-over. Then covert back with `''.join(map(chr, ords))`
 
-# 2015/12
+# 2015/12: JSAbacusFramework.io
+
+Given a JSON document, which has arrays, objects, numbers, and strings. There will be *no* strings containing numbers.
+
+* Part 1: Sum all the numbers in the document.
+* Part 2: Find the sum, ignoring any objects (which are `{...}`, not `[...]`) that have a value of `"red"`.
+
+Easy. Decoded the JSON using `json.loads` to make traversing easy/possible.
+To sum everything, I created a `sum_all` method that recursively handles the structures depending on their type (`dict`, `list`, `int`, `str`).
+
+To adjust for part 2, I introduced a field `part` to the `sum_all` function signature, using it to affect the recursion.
+
 # 2015/13
 # 2015/14
 # 2015/15
