@@ -836,10 +836,15 @@ Given a stream of characters with garbage surrounded by `<>`, an escape characte
 
 Created a `remove_garbage` function that processes the input string character by character, and a `score` function.
 
-# 2017/10: Knot Hash (STUCK)
-  Something doesn't work in what I implemented. 
-  I had to create a Circular List data structure which I think works..
-  But somehow, I'm not getting the right result.
+# 2017/10: Knot Hash
+Given a sequence of lengths. 
+* Part 1: Execute a round of the Knot Hash, which requires manipulating a circular list by cycling around it and reversing parts of it.
+* Part 2: Execute the entire Knot Hash. 
+
+I created a CyclicList class/datatype to handle the list manipulation for a single round of the knot hash. The logic for part 1 was extracted to `knot_hash_round()` after getting to part 2.
+
+
+
 
 # 2017/11
 # 2017/12
