@@ -23,7 +23,7 @@ Input given is shaped like
 * Part 1: Count valid passwords. Validity check uses counting repetitions of a given character.
 * Part 2: Count valid passwords. Validity check uses indexing and xor.
 
-Fairly straightforword. Starts with regex / parsing. 
+Fairly straightforward. Starts with regex / parsing. 
 
 # 2020/03: Toboggan Trajectory
 
@@ -262,7 +262,7 @@ vals : 0 3 6 0 3 3 1 0 4  0 ...
 
 Implemented Part 1 the naive way (storing all values) because N=2020.
 
-Redesigned for Part 2, where N=30,000,000. Created a dictionary `last_index` that maps value -> last index of occurence. 
+Redesigned for Part 2, where N=30,000,000. Created a dictionary `last_index` that maps value -> last index of occurrence. 
 Still, will likely store ~30,000,00 vals as repetitions may not be so common. 
 
 Was able to get the answer, though slowly, and running may still yield Out of Memory if not enough available. Not sure how to further optimize. 
@@ -301,14 +301,14 @@ As a further example (all tickets valid):
   15,1,5
   5,14,9
   ```
-  From the nearby tickets, determine which column corresponds to which field. Multipy the six fields on *your* ticket that start with the word `departure`.
+  From the nearby tickets, determine which column corresponds to which field. Multiply the six fields on *your* ticket that start with the word `departure`.
 
 
 I used range objects to make use of the `in` comparison (see helper function `make_range(input)`). 
 
 Reading in the data was a bit ugly. I had to use a `part` integer variable to separate the different parts of the data, and to detect which part by using specific line headings.
 
-For part 1, I put all ranges into a `all_ranges` list (ignoring ticket fields) and used a `ticket_error(lst)` method to help total up the invald values.
+For part 1, I put all ranges into a `all_ranges` list (ignoring ticket fields) and used a `ticket_error(lst)` method to help total up the invalid values.
 
 Part 2 was trickier. An oversight of mine: `ticket_error == 0` does not mean the ticket is valid. In my data, there was a ticket with a field having value `0` but such value wasn't allowed by my constraints. 
 I used `ticket_valid(lst)` to clean the list of nearby tickets. 
@@ -699,7 +699,7 @@ Tree traversal / construction ..
 # 2017/01: Inverse Captcha
 Given a long string of digits. Consider the string to be circular.
 * Part 1: Calculate a checksum, that compares a character with the next.
-* Part 2: Calcualte a checksum that compares a character with one halfway around the circular list.
+* Part 2: Calculate a checksum that compares a character with one halfway around the circular list.
 
 Wraparound can be handled cleverly by using the right expression for indexing.
 
@@ -886,10 +886,10 @@ turn off 384,670 through 674,972
 turn off 249,41 through 270,936
 turn on 614,742 through 769,780
 ```
-where the "through" means it applies to the rectangular range determined by those two coordiantes.
+where the "through" means it applies to the rectangular range determined by those two coordinates.
 
 * Part 1: Lights are binary. Count how many lights are lit. 
-* Part 2: Lights are integer valued "brightness". Toggle increases by 2, turn on increaes by 1, turn off decreases by 1 (but does not go below zero). Calculate total brightness of all lights.
+* Part 2: Lights are integer valued "brightness". Toggle increases by 2, turn on increases by 1, turn off decreases by 1 (but does not go below zero). Calculate total brightness of all lights.
 
 Used regex to extract useful values from instructions. Used defaultdicts for grids.
 
@@ -1079,7 +1079,7 @@ If any of the cookie's attributes is negative, the score of the cookie is 0.
 * Part 1: Find the max score possible.
 * Part 2: Only consider cookies that are 500 calories. Find the max score possible.
 
-Did this the naive way. The easiest way to iterate over all possibilites of having 4 amounts that add to 100 is by using a triply nested for loop. The calculation of a cookie's attributes are a dot product of an amount vector and an attribute vector. 
+Did this the naive way. The easiest way to iterate over all possibilities of having 4 amounts that add to 100 is by using a triply nested for loop. The calculation of a cookie's attributes are a dot product of an amount vector and an attribute vector. 
 
 # 2015/16: Aunt Sue
 Have 500 Aunt Sues. Given data about them in the format: 
