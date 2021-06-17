@@ -4,7 +4,7 @@ from collections import defaultdict
 
 f = open('day8input.txt')
 lines = f.readlines()
-pattern = '^(\w*) (inc|dec) (-?\d*) if (\w*) (>=|>|<|<=|!=|==) (-?\d*)$'
+pattern = r'^(\w*) (inc|dec) (-?\d*) if (\w*) (>=|>|<|<=|!=|==) (-?\d*)$'
 prog = re.compile(pattern)
 
 var_dict = defaultdict(int)

@@ -748,11 +748,94 @@ To check for duplicates, compare the length of the list of words with the size o
 
 For part 2, have to sort the letters of the word. Not too bad.
 
-# 2017/05
-# 2017/06
-# 2017/07
-# 2017/08
-# 2017/09
+# 2017/05: A Maze of Twisty Trampolines, All Alike
+
+* Part 1: Given a list of jump offsets, follow the instructions until outside the list. How many steps are needed to exit the list?
+* Part 2: The way instructions are processed is changed. How many steps are needed to exit the list?
+
+Straightforward
+
+# 2017/06: Memory Reallocation
+Given the number of blocks in each memory bank. 
+Memory is reallocated by a particular algorithm, distributing it across the entire memory bank.
+
+
+* Part 1: How many redistributions can be done before the configuration of the number of blocks-in-banks is repeated?
+* Part 2: How many configurations are in this infinite loop?
+
+I created the function `redistribute(line)` to follow the algorithm specified and kept track of all configurations in a list `seen`. 
+Part 1 is just the `len(seen)`. Part 2 is subtracting the indexes of the repeated occurrence: `len(seen) - seen.index(config)`, where `config` is the configuration that gets repeated, and the last configuration occuring in `seen`.
+
+# 2017/07: Recursive Circus
+
+Given a list of program names, weights, and descendants:
+```
+pbga (66)
+xhth (57)
+ebii (61)
+havc (66)
+ktlj (57)
+fwft (72) -> ktlj, cntj, xhth
+qoyq (66)
+padx (45) -> pbga, havc, qoyq
+tknk (41) -> ugml, padx, fwft
+jptl (61)
+ugml (68) -> gyxo, ebii, jptl
+gyxo (61)
+cntj (57)
+```
+which represents the tower structure:
+```
+                gyxo
+              /     
+         ugml - ebii
+       /      \     
+      |         jptl
+      |        
+      |         pbga
+     /        /
+tknk --- padx - havc
+     \        \
+      |         qoyq
+      |             
+      |         ktlj
+       \      /     
+         fwft - cntj
+              \     
+                xhth
+```
+* Part 1: Find the root program.
+* Part 2: Exactly one program has the wrong weight. Determine what the weight needs to be to balance the entire tower.
+
+Created `find_parent` and `find_root` functions to solve part 1. Straightforward tree traversal.
+
+Created `calc_tree_weight` and `find_unbalanced` to solve part 2. `calc_tree_weight` populates the dict `tree_weight`, which maps each node to the total weight of the subtree of that node. 
+`find_unbalanced` uses this info to traverse down the tree and find the specific node with the incorrect weight. Further calculation determines what it's weight should be.
+
+# 2017/08: I Heard You Like Registers
+
+Given a list of instructions like:
+```
+b inc 5 if a > 1
+a inc 1 if b < 5
+c dec -10 if a >= 1
+c inc -20 if c == 10
+```
+All registers start at 0.
+
+* Part 1: What is the largest value in any register after executing all the instructions?
+* Part 2: What is the largest value held in any register throughout the program execution?
+
+Used a regex to capture all relevant parts of each line, and dispatched their execution to the functions `eval_conditional` and `eval_expression`.
+
+# 2017/09: Stream Processing
+Given a stream of characters with garbage surrounded by `<>`, an escape character `!`, and grouping using `{}`.
+
+* Part 1: Each group is assigned a score. The outermost group gets a score of 1, and every nested group has a score one more than the group containing it. The total score is then computed by totalling the scores of all groups in the input. Find the total score.
+* Part 2: Count how many non-cancelled characters are within the garbage.
+
+Created a `remove_garbage` function that processes the input string character by character, and a `score` function.
+
 # 2017/10: Knot Hash (STUCK)
   Something doesn't work in what I implemented. 
   I had to create a Circular List data structure which I think works..

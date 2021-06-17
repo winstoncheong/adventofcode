@@ -24,15 +24,13 @@ def redistribute(line):
 #    print(line)
 
 seen = []
-cycles = 0
 config = ','.join(str(_) for _ in line)
 
 
 while config not in seen:
     seen.append(config)
     redistribute(line)
-    cycles += 1
     config = ','.join(str(_) for _ in line)
 
-print(f'Answer 1: {cycles}')
-print(f'Answer 2: {cycles - seen.index(config)}')
+print(f'Answer 1: {len(seen)}')
+print(f'Answer 2: {len(seen) - seen.index(config)}')
